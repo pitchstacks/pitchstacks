@@ -17,17 +17,19 @@ const AuthButtons:React.FC = () => {
                 width={{ base: "70px", md: "110px" }}
                 mr={2}
                 onClick={() => setAuthModalState({ open: true, view: "login" })}
-                >
-                    Log in
+            >
+                Log in
             </Button>
             <Button
                 height="28px" 
                 display={{ base: "none", sm: "flex" }}
                 width={{ base: "70px", md: "110px" }}
+                backgroundColor="brand.100"
                 mr={2}
                 onClick={() => setAuthModalState({ open: true, view: "signup" })}
-                >
-                    Sign up
+                _hover={{ bg: "brand.200" }}
+            >
+                Sign up
             </Button>
         </>
     );

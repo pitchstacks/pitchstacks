@@ -11,7 +11,9 @@ import {
     Button,
     Flex,
     Icon,
-    Text
+    Text,
+    Avatar,
+    AvatarBadge
   } from '@chakra-ui/react'
 import { signOut, User } from 'firebase/auth';
 import React from 'react';
@@ -48,7 +50,7 @@ const MenuDrop:React.FC<MenuDropProps> = ({ user }) => {
                             <Icon 
                                 fontSize={24} 
                                 mr={1} 
-                                color="gray.300" 
+                                color="gray" 
                                 as={VscAccount} 
                             />
                             <Flex
@@ -62,8 +64,8 @@ const MenuDrop:React.FC<MenuDropProps> = ({ user }) => {
                                     {user?.displayName || user?.email?.split("@")[0]}
                                 </Text>
                                 <Flex alignItems="center">
-                                    {/*<Icon as={IoSparkles} color="brand.100" mr={1} />*/}
-                                    <Text color="gray.400">PitchStacks BETA v.1.0.0</Text>
+                                    {/*<Text color="gray.400">PitchStacks BETA v.1.0.0</Text>*/}
+                                    <Text color="gray.400">[university name...]</Text>
                                 </Flex>
                             </Flex>
                             </>
@@ -82,8 +84,8 @@ const MenuDrop:React.FC<MenuDropProps> = ({ user }) => {
                     <MenuItem fontSize="10pt" fontWeight={700}
                     _hover={{ bg: "blue.300", color: "white" }}>
                     <Flex align="center">
-                        <Icon fontSize={20} mr={2} as={CgProfile} />
-                        View Profile
+                        <Icon fontSize={15} mr={2} as={CgProfile} />
+                        Profile (coming soon)
                     </Flex>
                 </MenuItem>{/*
                 <MenuItem fontSize="10pt" fontWeight={700}
@@ -106,7 +108,7 @@ const MenuDrop:React.FC<MenuDropProps> = ({ user }) => {
                     onClick={logout}
                     >
                     <Flex align="center">
-                        <Icon fontSize={20} mr={2} as={MdOutlineLogin} />
+                        <Icon fontSize={15} mr={2} as={MdOutlineLogin} />
                         Logout
                     </Flex>
                 </MenuItem>
@@ -118,7 +120,7 @@ const MenuDrop:React.FC<MenuDropProps> = ({ user }) => {
                     onClick={() => setAuthModalState({ open: true, view: "login" })}
                     >
                     <Flex align="center">
-                        <Icon fontSize={20} mr={2} as={MdOutlineLogin} />
+                        <Icon fontSize={15} mr={2} as={MdOutlineLogin} />
                         Sign in
                     </Flex>
                     </MenuItem>

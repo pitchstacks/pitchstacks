@@ -46,7 +46,7 @@ const Login:React.FC<LoginProps> = () => {
             <Input 
                 required
                 name="email" 
-                placeholder="email" 
+                placeholder="Email" 
                 type="email" 
                 mb={2}
                 onChange={onChange} 
@@ -68,7 +68,7 @@ const Login:React.FC<LoginProps> = () => {
             <Input 
                 required
                 name="password" 
-                placeholder="password" 
+                placeholder="Password" 
                 type="password" 
                 mb={2}
                 onChange={onChange} 
@@ -100,7 +100,7 @@ const Login:React.FC<LoginProps> = () => {
                 </Text>
                 <Text
                     fontSize="9pt"
-                    color="blue.500"
+                    color="brand.200"
                     cursor="pointer"
                     onClick={() => setAuthModalState((prev) => ({
                         ...prev,
@@ -115,7 +115,7 @@ const Login:React.FC<LoginProps> = () => {
             <Flex fontSize="9pt" justifyContent="center">
                 <Text mr={1}>Need an account?</Text>
                 <Text 
-                    color="blue.500" 
+                    color="brand.200" 
                     fontWeight={500} 
                     cursor="pointer" 
                     onClick={() => 
@@ -124,7 +124,9 @@ const Login:React.FC<LoginProps> = () => {
                             view: "signup",
                     }))
                 }
-                >Sign up</Text>
+                >
+                    Sign up
+                </Text>
             </Flex>
         </form>
     );

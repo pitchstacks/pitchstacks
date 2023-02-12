@@ -27,7 +27,7 @@ const NavIcons:React.FC = () => {
       </Box>
       <>
      
-        
+        {/*
         <Flex
           display={{ base: "none", md: "flex" }}
           mr={3}
@@ -36,10 +36,10 @@ const NavIcons:React.FC = () => {
           cursor="pointer"
           borderRadius={4}
           _hover={{ bg: "gray.200" }}
-          //onClick={toggleMenuOpen}
+          //onClick={}
         >
           <Icon as={GrAdd} fontSize={20} />
-        </Flex>
+    </Flex>*/}
       </>
     </Flex>
         

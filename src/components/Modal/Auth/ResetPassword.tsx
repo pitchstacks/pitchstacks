@@ -74,7 +74,7 @@ const ResetPassword: React.FC = () => {
       <Flex
         alignItems="center"
         fontSize="9pt"
-        color="blue.500"
+        color="brand.200"
         cursor="pointer"
       >
         <Text
@@ -85,10 +85,11 @@ const ResetPassword: React.FC = () => {
             }))
           }
         >
-          log in
+          back to log in
         </Text>
-        <Icon as={BsDot} />
-        <Text
+        {/*<Icon as={BsDot} />
+        <Text color="gray.500" pl={1} pr={1}>or</Text>*/}
+        {/*<Text
           onClick={() =>
             setAuthModalState((prev) => ({
               ...prev,
@@ -96,8 +97,8 @@ const ResetPassword: React.FC = () => {
             }))
           }
         >
-          create account
-        </Text>
+          sign up
+        </Text>*/}
       </Flex>
     </Flex>
   );

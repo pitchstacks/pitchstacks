@@ -26,7 +26,7 @@ const TopTrackers: React.FC = () => {
             const returnQuery = query(
                 collection(firestore, "trackers"), 
                 orderBy("numberOfMembers", "desc"), 
-                limit(10) // [TOP 10 PAGES]
+                limit(20) // [TOP ## PAGES]
             );
 
             const trackerDocs = await getDocs(returnQuery);
@@ -36,9 +36,6 @@ const TopTrackers: React.FC = () => {
             }));
 
             setTrackers(trackers as Tracker[]);
-
-
-            
 
 
         } catch (error) {
@@ -57,16 +54,17 @@ const TopTrackers: React.FC = () => {
 
     
     return (
-        <Flex direction="column" bg="white" borderRadius={4} border="1px solid" borderColor="gray.200" >
+        <Flex direction="column" bg="white" borderRadius={2} border="1px solid" borderColor="gray.400" >
             <Flex 
                 align="flex-end"
+                bg="gray.50"
                 color="gray.600"
                 p="12px 20px"
                 height="50px"
                 borderRadius="4px 4px 0px 0px"
                 fontWeight={700}
                 backgroundSize="cover"
-                bgGradient="linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1))"
+                //bgGradient="linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1))"
             >
                 Find your fund...
             </Flex>
@@ -91,7 +89,15 @@ const TopTrackers: React.FC = () => {
 
                             return (
                                 <Link key={item.id} href={`/$/${item.id}`}>
-                                    <Flex position="relative" align="center" fontSize="10pt" borderBottom="1px solid" borderColor="gray.200" p="10px 12px">
+                                    <Flex 
+                                        position="relative" 
+                                        align="center" 
+                                        fontSize="10pt" 
+                                        borderBottom="1px solid" 
+                                        borderColor="gray.200" 
+                                        p="10px 12px" 
+                                        _hover={{ bg: "gray.100" }}
+                                    >
                                         <Flex width="7%">
                                             <Text>{index +1}.</Text>
                                         </Flex>
@@ -122,10 +128,10 @@ const TopTrackers: React.FC = () => {
                         {/*
                         <Box p="10px 20px">
                             <Button height="30px" width="100%">
-                                Add your fund
+                                View all funds
                             </Button>
                         </Box>
-                    */}
+                        */}
                     </>
                 )}
 

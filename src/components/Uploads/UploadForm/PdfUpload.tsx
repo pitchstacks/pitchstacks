@@ -1,15 +1,15 @@
 import { Button, Flex, Image, Stack, Text } from '@chakra-ui/react';
 import React, { useRef } from 'react';
 
-type ImageUploadProps = {
-    selectImage?: string; // optional
-    userUploadImage: (event: React.ChangeEvent<HTMLInputElement>) => void;
+type PdfUploadProps = {
+    selectPDF?: string; // optional
+    userUploadPDF: (event: React.ChangeEvent<HTMLInputElement>) => void;
     selectedTabItem: (value: string) => void;
-    setselectImage: (value: string) => void;
+    setselectPDF: (value: string) => void;
 };
 
-const ImageUpload:React.FC<ImageUploadProps> = ({ 
-    selectImage, userUploadImage, selectedTabItem, setselectImage
+const PdfUpload:React.FC<PdfUploadProps> = ({ 
+    selectPDF, userUploadPDF, selectedTabItem, setselectPDF
     }) => {
 
     // select file hook
@@ -18,10 +18,11 @@ const ImageUpload:React.FC<ImageUploadProps> = ({
     return (
         <Flex justify="center" align="center" direction="column" mt={10} width="100%">
 
-            {selectImage ? (
+            {selectPDF ? (
                 <>
-                    {/* Image preview */}
-                    <Image src={selectImage} maxWidth="400px" maxHeight="400px" />
+               
+                    <Text>PDF file selected</Text>
+
                     
 
                     <Stack direction="row" mt={10} mb={10}>
@@ -29,7 +30,7 @@ const ImageUpload:React.FC<ImageUploadProps> = ({
                         <Button
                             height="25px"
                             variant="outline"
-                            onClick={() => setselectImage("")}
+                            onClick={() => setselectPDF("")}
                         >
                             Remove
                         </Button>
@@ -50,18 +51,18 @@ const ImageUpload:React.FC<ImageUploadProps> = ({
                     height="25px"
                     onClick={() => selectImageFile.current?.click()}
                 >
-                    Select File (.png .jpeg or .jpg)
+                    Select PDF File
                 </Button>
                 <input 
                     ref={selectImageFile} 
                     type="file"
-                    accept='image/x-png, image/jpeg, image/jpg'
+                    accept='application/pdf'
                     hidden
-                    onChange={userUploadImage} 
+                    onChange={userUploadPDF} 
                 />
                 
                 {/* display selected file */}
-                <img src={selectImage} />
+                <img src={selectPDF} />
 
             </Flex>
             )}
@@ -69,4 +70,12 @@ const ImageUpload:React.FC<ImageUploadProps> = ({
         </Flex>
     );
 }
-export default ImageUpload;
+export default PdfUpload;
+
+
+
+
+
+
+
+

@@ -24,7 +24,7 @@ const ListDirectory:React.FC<ListDirectoryProps> = ({ textShown, link, icon, ico
                     {imageURL ? (
                         <Image src={imageURL} borderRadius="full" boxSize="16px" mr={2} />
                     ) : (
-                        <Icon as={icon} fontSize={20} mr={2} color={iconColor} />
+                        <Icon as={icon} fontSize={15} mr={2} color={iconColor} />
                     )}{textShown}
                     
                 </Flex>

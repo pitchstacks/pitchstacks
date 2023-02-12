@@ -33,18 +33,18 @@ const AuthModal:React.FC = () => {
             <ModalOverlay />
             <ModalContent>
                 <ModalHeader textAlign="center">
-                    {modalState.view == 'login' && 'Login'}
-                    {modalState.view == 'signup' && 'Create an account'}
+                    {modalState.view == 'login' && 'Welcome back'}
+                    {modalState.view == 'signup' && 'Join PitchStacks'}
                     {modalState.view == 'resetPassword' && 'Reset password'}
                 </ModalHeader>
                 <ModalCloseButton />
-                <ModalBody display="flex" flexDirection="column" alignItems="center" justifyContent="center" pb={6}>
+                <ModalBody mt={3} display="flex" flexDirection="column" alignItems="center" justifyContent="center" pb={6}>
                     <Flex direction="column" align="center" justify="center" width="70%">
                         {modalState.view == "login" || modalState.view == "signup" ? (
                             <>
-                            <OAuthBtn />
-                        <Text>or</Text>
-                        <AuthInputs />
+                                <OAuthBtn />
+                                <Text>or</Text>
+                                <AuthInputs />
                             </>
                         ) : (
                             <ResetPassword />

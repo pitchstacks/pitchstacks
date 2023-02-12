@@ -118,7 +118,7 @@ const CreateTrackerModal:React.FC<CreateTrackerModalProps> = ({ open, closecreat
                             Add your fund or tracker
                         </Text>
                         <Text fontSize={12} color="gray.500">
-                            This name <b>cannot</b> be changed after it is created
+                            This username <b>cannot</b> be changed after it is created
                         </Text>
                         <Text 
                             position="relative" 
@@ -145,8 +145,8 @@ const CreateTrackerModal:React.FC<CreateTrackerModalProps> = ({ open, closecreat
                             wwww.pitchstacks.com/$/{trackerName}
                         </Text>
                         <Box>
-                            <Text fontWeight={500} fontSize={15} mb={2}>
-                                Visibility:
+                            <Text fontWeight={500} fontSize={15} mt={2} mb={2}>
+                                Status (will be implemented later):
                             </Text>
                             <Stack spacing={2}>
                                 <Checkbox 
@@ -190,7 +190,11 @@ const CreateTrackerModal:React.FC<CreateTrackerModalProps> = ({ open, closecreat
                 <Button 
                     height="25px" 
                     onClick={handleCreate} 
-                    isLoading={loading}>
+                    isLoading={loading}
+                    color="white"
+                    backgroundColor="brand.100"
+                    _hover={{ backgroundColor: "brand.200" }}
+                >
                         Create Page
                 </Button>
               </ModalFooter>

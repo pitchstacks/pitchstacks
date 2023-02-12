@@ -17,8 +17,8 @@ const Header:React.FC<HeaderProps> = ({ trackerData }) => {
 
     return (
         <Flex direction="column" width="100%" height="150px">
-            <Box height="50%" bg="blue.200" />
-            <Flex justify="center" bg="white" flexGrow={1}>
+            <Box height="40%" bg="gray.100" />
+            <Flex justify="center" bg="gray.100" flexGrow={1}>
                 <Flex width="95%" maxWidth="860px">
                     {trackerSValue.currentTracker?.imageURL ? (
                         <Image 
@@ -27,8 +27,9 @@ const Header:React.FC<HeaderProps> = ({ trackerData }) => {
                             borderRadius={7}
                             border="2px solid white"
                             boxSize="66px"
-                            alt="Profile"
+                            alt="Profile Image"
                             position="relative"
+                            background="white"
                             top={-3}
                         />
                     ) : (
@@ -70,7 +71,11 @@ const Header:React.FC<HeaderProps> = ({ trackerData }) => {
                     </Button>
 
                 </Flex>
+
+
             </Flex>
+             
+            
         </Flex>
     );
 }

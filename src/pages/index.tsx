@@ -8,6 +8,7 @@ import { trackerCurrent } from "../atoms/trackerAtom";
 import { Upload, UploadVote } from "../atoms/uploadAtom";
 import MainContentLayout from "../components/Layout/MainContentLayout"
 import CreatePostBtn from "../components/Tracker/CreatePostBtn";
+import EndOfFeed from "../components/Tracker/EndOfFeed";
 import FirmAccount from "../components/Tracker/FirmAccount";
 import TopTrackers from "../components/Tracker/TopTrackers";
 import UploadItem from "../components/Uploads/UploadItem";
@@ -174,10 +175,11 @@ const Home: NextPage = () => {
             ))}
           </Stack>
         )}
+        <EndOfFeed /> {/* txt at bottom of feed */}
       </>
       <>
-        <TopTrackers />
-        <FirmAccount />
+        <TopTrackers /> {/* list of top trackers */}
+        <FirmAccount /> {/* apply for firm account blob */}
       </>
     </MainContentLayout>
   );

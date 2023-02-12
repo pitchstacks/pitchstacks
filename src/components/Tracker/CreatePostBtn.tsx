@@ -23,7 +23,7 @@ const CreatePostBtn: React.FC = () => {
     // links user to /upload page
     const onClick = () => {
         if(!user) {
-            setLoginModal({ open: true, view: "login" });
+            setLoginModal({ open: true, view: "signup" });
             return;
         }
         const { trackerId } = router.query;
@@ -45,13 +45,13 @@ const CreatePostBtn: React.FC = () => {
       height="56px"
       borderRadius={4}
       border="1px solid"
-      borderColor="gray.300"
+      borderColor="gray.400"
       p={2}
       mb={4}
     >
       {/*<Icon as={RiFundsBoxLine} fontSize={36} color="gray.300" mr={4} />*/}
       <Input
-        placeholder="Welcome to PitchStacks BETA (click here to get started)"
+        placeholder="Welcome to PitchStacks (click here to get started)"
         fontSize="10pt"
         cursor="pointer"
         _placeholder={{ color: "gray.500" }}

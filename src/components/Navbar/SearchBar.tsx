@@ -14,12 +14,11 @@ const SearchBar:React.FC<SearchBarProps> = ({ user }) => {
     return (
         <Flex flexGrow={1} maxWidth={user ? "auto" : "600px"} mr={2} align="center">
             <InputGroup>
-                <InputLeftElement
-                    pointerEvents='none'
-                    children={<SearchIcon color='gray.400' />}
-                />
+                <InputLeftElement pointerEvents='none'>
+                    <SearchIcon color='gray.400' />
+                </InputLeftElement>
                 <Input 
-                    placeholder='Find your friends' 
+                    placeholder='Search (coming soon)' 
                     fontSize="10pt" 
                     _placeholder={{ color: "grey.500" }} 
                     _hover={{

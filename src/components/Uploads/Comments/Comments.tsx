@@ -154,9 +154,15 @@ const Comments:React.FC<CommentsProps> = ({ user, selectedUpload, trackerId }) =
 
     return (
         <Box bg="white" borderRadius="0px 0px 4px 4px" p={2}>
-            <Flex direction="column" pl={10} pr={4} mb={6} fontSize="10pt" width="100%">
+            <Flex direction="column" pl={5} pr={4} mb={6} fontSize="10pt" width="100%">
                 {!returnLoading && (
-                    <Input commentText={commentText} setCommentText={setCommentText} user={user} startLoading={startLoading} userCreateComment={userCreateComment} />
+                    <Input 
+                        commentText={commentText} 
+                        setCommentText={setCommentText} 
+                        user={user} 
+                        startLoading={startLoading} 
+                        userCreateComment={userCreateComment} 
+                    />
                 )}
             </Flex>
             <Stack spacing={5} p={2}>
@@ -196,7 +202,7 @@ const Comments:React.FC<CommentsProps> = ({ user, selectedUpload, trackerId }) =
                                 comment={comment}
                                 userDeleteComment={userDeleteComment}
                                 isDeleting={deleteId == comment.id}
-                                userId={user.uid}
+                                userId={user?.uid}
                             />
                 ))}
                             </>

@@ -9,25 +9,33 @@ import { addDoc, collection, serverTimestamp, Timestamp, updateDoc } from 'fireb
 import { getDownloadURL, ref, uploadString } from 'firebase/storage';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
-import { IoDocumentText, IoImageOutline } from 'react-icons/io5';
+import { BsCardText } from 'react-icons/bs';
+import { IoDocumentText } from 'react-icons/io5';
 import TabNav from './TabNav';
 import ImageUpload from './UploadForm/ImageUpload';
+import PdfUpload from './UploadForm/PdfUpload';
 import TextInput from './UploadForm/TextInput';
+import UploadItem from './UploadItem';
 
 type UploadFormProps = {
     //user?: User | null;
     user: User;
     trackerImageURL?: string;
+    trackerPDFURL?: string;
 };
 
 const uploadTabInfo: TabItem[] = [
     {
-        title: 'Upload',
+        title: 'Info',
+        icon: BsCardText,
+    },
+    {
+        title: "Add PDF",
         icon: IoDocumentText,
     },
     {
-        title: "Image & Video",
-        icon: IoImageOutline,
+        title: "Add File",
+        icon: IoDocumentText,
     }
 ];
 
@@ -36,7 +44,7 @@ export type TabItem = {
     icon: typeof Icon.arguments;
 }
 
-const UploadForm: React.FC<UploadFormProps> = ({ user, trackerImageURL }) => {
+const UploadForm: React.FC<UploadFormProps> = ({ user, trackerImageURL, trackerPDFURL }) => {
 
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
@@ -45,11 +53,12 @@ const UploadForm: React.FC<UploadFormProps> = ({ user, trackerImageURL }) => {
     const [textInputs, setTextInputs] = useState({
         title: "",
         body: "",
+        ticker: "",
+        type: "",
     });
     const [selectedFile, setSelectedFile] = useState<string>();
-    //const { selectedFile, setSelectedFile, userUploadImage,} = selectIMG();
-
-
+    const [selectedPDF, setSelectedPDF] = useState<string>();
+    
 
     const userCreateUpload = async () => {
 
@@ -57,23 +66,35 @@ const UploadForm: React.FC<UploadFormProps> = ({ user, trackerImageURL }) => {
         //include file?
 
         const { trackerId } = router.query;
+        const { title, body, ticker } = textInputs;
+
+        
+
+        //store in backend
+        setLoading(true);
+        try {
+
 
         //new upload obj
         const newUpload: Upload = {
+            //id: user.uid, // big change
             trackerId: trackerId as string,
             trackerImageURL: trackerImageURL || "",
+            trackerPDFURL: trackerPDFURL || "",
             creatorId: user.uid,
             creatorDisplayName: user.email!.split('@')[0],
             title: textInputs.title,
             body: textInputs.body,
+            ticker: textInputs.ticker,
+            type: textInputs.type,
             totalComments: 0,
             totalVotes: 0,
             uploadTime: serverTimestamp() as Timestamp,
         };
 
-        //store in backend
-        setLoading(true);
-        try {
+
+
+
             const uploadDocRef = await addDoc(collection(firestore, "uploads"), newUpload);
 
             if (selectedFile) {
@@ -89,6 +110,21 @@ const UploadForm: React.FC<UploadFormProps> = ({ user, trackerImageURL }) => {
 
 
             }
+
+            if (selectedPDF) {
+                const pdfRef = ref(storage, `/uploads/${uploadDocRef.id}/image`); //location
+                await uploadString(pdfRef, selectedPDF, "data_url"); // store upload
+                const refURL = await getDownloadURL(pdfRef);
+
+
+                // update upload doc
+                await updateDoc(uploadDocRef, {
+                    pdfURL: refURL,
+                });
+
+
+            }
+
             router.back(); // returns user to prev page
 
 
@@ -122,8 +158,34 @@ const UploadForm: React.FC<UploadFormProps> = ({ user, trackerImageURL }) => {
 
     };
 
+
+    {/* pdf userUploadPDF */}
+    const userUploadPDF = (
+        event: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        const fileRead = new FileReader();
+
+        // only taking one array element
+        if(event.target.files?.[0]) {
+            fileRead.readAsDataURL(event.target.files[0]);
+        }
+
+        // store file in state (appear as preview on page)
+        fileRead.onload = (readerEvent) => {
+            if (readerEvent.target?.result) {
+                setSelectedPDF(readerEvent.target.result as string);
+            }
+        }
+
+
+    };
+
+
+
+
+
     const textChange = (
-        event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+        event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
     ) => {
         const { target: { name, value }, } = event;
         setTextInputs(prev => ({
@@ -149,7 +211,7 @@ const UploadForm: React.FC<UploadFormProps> = ({ user, trackerImageURL }) => {
             </Flex>
             <Flex>
                 {/* Text input areas */}
-                {selectedTabItem == "Upload" && (
+                {selectedTabItem == "Info" && (
                     <TextInput 
                         textInputs={textInputs}
                         userCreateUpload={userCreateUpload}
@@ -158,8 +220,18 @@ const UploadForm: React.FC<UploadFormProps> = ({ user, trackerImageURL }) => {
                     />
                 )}
 
+                {/* PDF upload */}
+                {selectedTabItem == "Add PDF" && (
+                    <PdfUpload 
+                        selectPDF={selectedPDF} 
+                        userUploadPDF={userUploadPDF} 
+                        selectedTabItem={setSelectedTabItem} 
+                        setselectPDF={setSelectedPDF}
+                    />
+                )}
+
                 {/* Image upload */}
-                {selectedTabItem == "Image & Video" && (
+                {selectedTabItem == "Add File" && (
                     <ImageUpload 
                         selectImage={selectedFile} 
                         userUploadImage={userUploadImage} 

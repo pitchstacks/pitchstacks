@@ -2,16 +2,20 @@ import { Timestamp } from "@google-cloud/firestore";
 import { atom } from "recoil";
 
 export type Upload = {
-    id: string;
+    //id: string;
     trackerId: string;
     creatorId: string;
     creatorDisplayName: string;
     title: string;
     body: string;
+    ticker: string;
+    type: string;
     totalComments: number;
     totalVotes: number;
     imageURL?: string;
     trackerImageURL?: string;
+    pdfURL?: string;
+    trackerPDFURL?: string;
     uploadTime: Timestamp; 
 };
 

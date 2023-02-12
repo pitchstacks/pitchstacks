@@ -8,7 +8,8 @@ export const theme = extendTheme({
   colors: {
     brand: {
         // main blue color
-        100: "#1a53ff",
+        100: "#1a53ff", // logo color
+        200: "#497bf7", // hover color
     },
   },
   fonts: {
@@ -17,7 +18,7 @@ export const theme = extendTheme({
   styles: {
     global: () => ({
         body: {
-            bg: "gray.200", // grey background
+            bg: "gray.100", // grey background
         },
     }),
   },

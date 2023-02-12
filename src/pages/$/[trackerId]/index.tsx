@@ -23,10 +23,6 @@ const TrackerPage: React.FC<TrackerPageProps> = ({ trackerData }) => {
     const [user, loadingUser] = useAuthState(auth);
     const setTrackerView = useSetRecoilState(uploadState);
     
-    //tracker page url does not exist:
-    if (!trackerData) {
-        return <PageNotFound />;
-    }
 
     //after data renders
     useEffect(() => {
@@ -35,6 +31,16 @@ const TrackerPage: React.FC<TrackerPageProps> = ({ trackerData }) => {
             currentTracker: trackerData,
         }));
     }, [trackerData]);
+
+
+
+    //tracker page url does not exist:
+    if (!trackerData) {
+        return <PageNotFound />;
+    }
+
+
+    
 
     //tracker page url exists:
     return (

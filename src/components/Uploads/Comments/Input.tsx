@@ -14,7 +14,7 @@ type InputProps = {
 const Input:React.FC<InputProps> = ({ commentText, setCommentText, user, startLoading, userCreateComment }) => {
     
     return (
-        <Flex direction="column" position="relative" mt={3}>
+    <Flex direction="column" position="relative" mt={3} mr={3}>
       {user ? (
         <>
           <Text mb={2}>
@@ -26,10 +26,10 @@ const Input:React.FC<InputProps> = ({ commentText, setCommentText, user, startLo
           <Textarea
             value={commentText}
             onChange={(event) => setCommentText(event.target.value)}
-            placeholder="type your thoughts..."
+            placeholder="Type your thoughts..."
             fontSize="10pt"
             borderRadius={4}
-            minHeight="160px"
+            minHeight="100px"
             pb={10}
             _placeholder={{ color: "gray.500" }}
             _focus={{
@@ -44,7 +44,7 @@ const Input:React.FC<InputProps> = ({ commentText, setCommentText, user, startLo
             right={0.1}
             bottom="1px"
             justify="flex-end"
-            bg="gray.100"
+            //bg="gray.100"
             p="6px 8px"
             borderRadius="0px 0px 4px 4px"
           >
@@ -67,7 +67,7 @@ const Input:React.FC<InputProps> = ({ commentText, setCommentText, user, startLo
           borderColor="gray.100"
           p={4}
         >
-          <Text fontWeight={600}>Join PitchStacks to comment</Text>
+          <Text fontWeight={600}>Must be logged in to comment</Text>
           <AuthButtons />
         </Flex>
       )}

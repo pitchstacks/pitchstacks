@@ -3,6 +3,8 @@ import { Timestamp } from 'firebase/firestore';
 import moment from 'moment';
 import React from 'react';
 import { BiUserCircle } from "react-icons/bi";
+import { BsDot } from 'react-icons/bs';
+import { cursorTo } from 'readline';
 
 
 export type Comment = {
@@ -28,31 +30,33 @@ const CommentItem:React.FC<CommentItemProps> = ({ comment, userDeleteComment, is
     
     return (
         <Flex>
-            <Box mr={2}>
-                <Icon as={BiUserCircle} fontSize={30} color="gray.300" />
+            <Box mr={3}>
+                {/*<Icon as={BiUserCircle} fontSize={30} color="gray.300" />*/}
             </Box>
             <Stack spacing={1}>
-                <Stack direction="row" align="center" fontSize="8pt">
-                    <Text fontWeight={700}>@{comment.createdByText}</Text>
+                <Stack direction="row" align="center" fontSize="10pt">
+                    <Text fontWeight={700}>{comment.createdByText}</Text>
                     <Text color="gray.400">
                         {moment(new Date(comment.uploadTime.seconds * 1000)).fromNow()}
                     </Text>
-                    {isDeleting && <Spinner size="sm" />}
-                </Stack>
-                <Text fontSize={10}>{comment.text}</Text>
-                <Stack direction="row" align="center" cursor="pointer" color="gray.500">
                     {userId == comment.createdBy && (
                         <>
+                        <Icon as={BsDot} />
                         <Text 
-                            fontSize="8pt" 
-                            _hover={{ color: "brand.100" }} 
+                            fontSize="8pt"
+                            _hover={{ color: "blue.500", cursor: "pointer" }} 
                             onClick={() => userDeleteComment(comment)}
                         >
                             Delete your reply
                         </Text>
                         </>
                     )}
+                    {isDeleting && <Spinner size="sm" />}
                 </Stack>
+                <Text fontSize={13}>{comment.text}</Text>
+                {/*<Stack direction="row" align="center" cursor="pointer" color="gray.500">
+                    delete btn
+                </Stack>*/}
             </Stack>
         </Flex>
     );

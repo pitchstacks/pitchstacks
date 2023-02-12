@@ -18,7 +18,9 @@ const UploadPost: React.FC = () => {
         <MainContentLayout>
             <>
                 <Box p="20px 0px">
-                    <Text>Create upload</Text>
+                    <Text color="gray.500" fontWeight={600}>
+                        Create upload
+                    </Text>
                 </Box>
             {user && <UploadForm user={user} trackerImageURL={setTrackerStateView.currentTracker?.imageURL} />}
             </>

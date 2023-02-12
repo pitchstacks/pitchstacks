@@ -24,8 +24,8 @@ const Navbar:React.FC = () => {
                 cursor="pointer"
             >
                 
-                <Image src='/images/pitchstacks_h_logo.png' height="50px" display={{ base: "none", md: "unset" }}/>
-                <Image src='/images/icon_white_background.png' height="45px" paddingTop="1" display={{ base: "unset", md: "none" }}/>
+                <Image src='/images/pitchstacks_h_logo.png' draggable="false" height="50px" display={{ base: "none", md: "unset" }}/>
+                <Image src='/images/icon_white_background.png' draggable="false" height="45px" paddingTop="1" display={{ base: "unset", md: "none" }}/>
                 
             </Flex>
             <SearchBar user={user} /> {/* search bar */}

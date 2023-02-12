@@ -51,7 +51,7 @@ const Info:React.FC<InfoProps> = ({ trackerData }) => {
 
 
         } catch (error) {
-            console.log("Chnaging pic error:", error);
+            console.log("Editing pic error:", error);
         }
         setChangingImage(false);
     };
@@ -84,7 +84,7 @@ const Info:React.FC<InfoProps> = ({ trackerData }) => {
                     <Flex width="100%" p={2} align="center" fontSize="10pt">
                         <Flex direction="row" flexGrow={1}>
                             <Link href={`/$/${trackerData.id}/upload`}>
-                                <Button variant="outline">
+                                <Button variant="outline" width="230px">
                                     Create new upload
                                 </Button>
                             </Link>
@@ -96,7 +96,7 @@ const Info:React.FC<InfoProps> = ({ trackerData }) => {
                         <>
                         <Divider />
                         <Stack spacing={3} fontSize="10pt">
-                            <Text fontWeight={600}>Edit page</Text>
+                            <Text fontWeight={600}>Edit page as creator</Text>
                             <Flex align="center" justify="space-between">
                                 <Text 
                                     color="brand.100"
