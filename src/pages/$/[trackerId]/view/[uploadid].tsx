@@ -4,7 +4,7 @@ import Info from '@/src/components/Tracker/Info';
 import Comments from '@/src/components/Uploads/Comments/Comments';
 import UploadItem from '@/src/components/Uploads/UploadItem';
 import { auth, firestore } from '@/src/firebase/configApp';
-import returnUploadList from '@/src/hooks/returnUploads';
+import returnUploadList from '@/src/hooks/ReturnUploads';
 import { User } from 'firebase/auth';
 import { doc, getDoc } from 'firebase/firestore';
 import { useRouter } from 'next/router';

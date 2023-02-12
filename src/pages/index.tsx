@@ -14,8 +14,8 @@ import TopTrackers from "../components/Tracker/TopTrackers";
 import UploadItem from "../components/Uploads/UploadItem";
 import UploadLoader from "../components/Uploads/UploadLoader";
 import { auth, firestore } from "../firebase/configApp";
-import returnUploadList from "../hooks/returnUploads";
-import uploadedTrackerData from "../hooks/uploadedTrackerData";
+import returnUploadList from "../hooks/ReturnUploads";
+import uploadedTrackerData from "../hooks/UploadedTrackerData";
 
 const Home: NextPage = () => {
 

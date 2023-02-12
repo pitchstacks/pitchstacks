@@ -1,6 +1,6 @@
 import { Tracker, trackerCurrent } from '@/src/atoms/trackerAtom';
 import { auth, firestore, storage } from '@/src/firebase/configApp';
-import selectIMG from '@/src/hooks/selectIMG';
+import selectIMG from '@/src/hooks/SelectIMG';
 import { Box, Button, Divider, Flex, Stack, Text, Image, Icon, Spinner } from '@chakra-ui/react';
 import { doc, updateDoc } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadString } from 'firebase/storage';

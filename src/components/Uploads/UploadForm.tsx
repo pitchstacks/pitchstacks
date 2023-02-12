@@ -1,6 +1,6 @@
 import { Upload } from '@/src/atoms/uploadAtom';
 import { firestore, storage } from '@/src/firebase/configApp';
-import selectIMG from '@/src/hooks/selectIMG';
+import selectIMG from '@/src/hooks/SelectIMG';
 import { Alert, AlertDescription, AlertIcon, AlertTitle, Flex, Icon, TableContainer } from '@chakra-ui/react';
 import { async } from '@firebase/util';
 import { Readex_Pro } from '@next/font/google';

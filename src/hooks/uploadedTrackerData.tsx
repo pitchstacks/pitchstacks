@@ -8,7 +8,7 @@ import { Tracker, TrackerBits, trackerCurrent } from '../atoms/trackerAtom';
 import { auth, firestore } from '../firebase/configApp';
 
 
-const uploadedTrackerData = () => {
+const UploadedTrackerData = () => {
     
     const [user] = useAuthState(auth);
     const [trackerSValue, settrackerSValue] = useRecoilState(trackerCurrent);
@@ -194,4 +194,4 @@ const uploadedTrackerData = () => {
         loading,
     }
 }
-export default uploadedTrackerData;
+export default UploadedTrackerData;

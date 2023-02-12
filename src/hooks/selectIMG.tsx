@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const selectIMG = () => {
+const SelectIMG = () => {
 
     const [selectedFile, setSelectedFile] = useState<string>();
 
@@ -30,4 +30,4 @@ const selectIMG = () => {
         selectedFile, setSelectedFile, userUploadImage,
     };
 };
-export default selectIMG;
+export default SelectIMG;

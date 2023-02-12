@@ -1,7 +1,7 @@
 import { Tracker } from '../../atoms/trackerAtom';
 import React from 'react';
 import { Box, Button, Flex, Icon, Image, Text } from '@chakra-ui/react';
-import uploadedTrackerData from '../../hooks/uploadedTrackerData';
+import uploadedTrackerData from '../../hooks/UploadedTrackerData';
 import { RiFundsLine } from "react-icons/ri";
 
 

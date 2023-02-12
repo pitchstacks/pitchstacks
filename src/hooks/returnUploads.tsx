@@ -12,7 +12,7 @@ import { useRouter } from 'next/router';
 
 
 
-const returnUploadList = () => {
+const ReturnUploadList = () => {
 
     const [user] = useAuthState(auth);
     const router = useRouter();
@@ -212,4 +212,4 @@ const returnUploadList = () => {
         uploadDeleted,
     };
 };
-export default returnUploadList;
+export default ReturnUploadList;
