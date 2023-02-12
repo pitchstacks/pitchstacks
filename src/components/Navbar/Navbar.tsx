@@ -1,6 +1,6 @@
 import { defaultItem } from '@/src/atoms/menuAtom';
 import { auth } from '@/src/firebase/configApp';
-import clickDirectory from '@/src/hooks/clickDirectory';
+import clickDirectory from '@/src/hooks/ClickDirectory';
 import { Flex, Image, Link } from '@chakra-ui/react';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';

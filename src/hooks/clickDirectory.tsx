@@ -7,7 +7,7 @@ import { trackerCurrent } from '../atoms/trackerAtom';
 
 
 
-const clickDirectory = () => {
+const ClickDirectory = () => {
     
     const [directoryState, setDirectoryState] = useRecoilState(menuState);
     const router = useRouter();
@@ -60,4 +60,4 @@ const clickDirectory = () => {
 
     return { directoryState, makeMenuOpen, clickedMenuItem };
 }
-export default clickDirectory;
+export default ClickDirectory;

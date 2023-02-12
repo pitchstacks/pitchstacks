@@ -1,4 +1,4 @@
-import clickDirectory from '@/src/hooks/clickDirectory';
+import clickDirectory from '@/src/hooks/ClickDirectory';
 import { Flex, Icon, Image, MenuItem } from '@chakra-ui/react';
 import React from 'react';
 import { IconType } from 'react-icons';

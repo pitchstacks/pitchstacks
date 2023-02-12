@@ -1,6 +1,6 @@
 import { authModalState } from '@/src/atoms/authModalAtom';
 import { auth } from '@/src/firebase/configApp';
-import clickDirectory from '@/src/hooks/clickDirectory';
+import clickDirectory from '@/src/hooks/ClickDirectory';
 import { Flex, Icon, Input, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import React from 'react';

@@ -1,4 +1,4 @@
-import clickDirectory from '@/src/hooks/clickDirectory';
+import clickDirectory from '@/src/hooks/ClickDirectory';
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import {
     Flex, Icon, Menu,
