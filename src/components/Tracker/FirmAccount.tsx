@@ -16,13 +16,13 @@ const FirmAccount: React.FC = () => {
     >
       <Flex mb={4}>
         <Icon as={TiBusinessCard} fontSize={26} color="brand.100" mt={2} />
-        <Stack spacing={1} fontSize="9pt" pl={4}>
+        <Stack spacing={1} fontSize="9pt" pl={4} pt={2}>
           <Text fontWeight={600}>Apply for firm account</Text>
           <Text>Intergrate our data into your firm's investment research process</Text>
         </Stack>
       </Flex>
-      <Link href="https://airtable.com/shrYrfN9ngDpi4aso" target="_blank">
-        <Button height="30px" width="100%" bg="brand.100" _hover={{ textDecoration: "none" }}>
+      <Link href="https://airtable.com/shrYrfN9ngDpi4aso" target="_blank" _hover={{ textDecoration: "none" }}>
+        <Button height="30px" width="100%" variant="outline" _hover={{ textDecoration: "none" }}>
             See options
         </Button>
       </Link>

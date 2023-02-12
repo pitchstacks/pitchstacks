@@ -97,7 +97,7 @@ const MenuDrop:React.FC<MenuDropProps> = ({ user }) => {
                     _hover={{ bg: "blue.300", color: "white" }}>
                     <Flex align="center">
                         <Icon fontSize={20} mr={2} as={CgProfile} />
-                        itme 3
+                        item 3
                     </Flex>
                 </MenuItem>*/}
                 <MenuDivider />

@@ -27,9 +27,9 @@ export const Button: ComponentStyleConfig = {
         },
       },
       outline: {
-        color: "blue.500",
+        color: "brand.100",
         border: "1px solid",
-        borderColor: "blue.500",
+        borderColor: "brand.100",
       },
       oauth: {
         height: "34px",

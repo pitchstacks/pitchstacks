@@ -130,7 +130,7 @@ const CreateTrackerModal:React.FC<CreateTrackerModalProps> = ({ open, closecreat
                         <Input 
                             value={trackerName}
                             position="relative"
-                            placeholder="your fund"
+                            placeholder="your_fund"
                             size="sm"
                             pl="22px"
                             onChange={handleChange}
@@ -140,6 +140,9 @@ const CreateTrackerModal:React.FC<CreateTrackerModalProps> = ({ open, closecreat
                         </Text>
                         <Text fontSize="9pt" color="red" pt={1} pb={3}>
                             {error}
+                        </Text>
+                        <Text pb={3} fontSize="10pt" color="gray.500">
+                            wwww.pitchstacks.com/$/{trackerName}
                         </Text>
                         <Box>
                             <Text fontWeight={500} fontSize={15} mb={2}>

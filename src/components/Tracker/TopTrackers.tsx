@@ -92,12 +92,12 @@ const TopTrackers: React.FC = () => {
                             return (
                                 <Link key={item.id} href={`/$/${item.id}`}>
                                     <Flex position="relative" align="center" fontSize="10pt" borderBottom="1px solid" borderColor="gray.200" p="10px 12px">
-                                        <Flex width="15%">
-                                            <Text>{index +1}</Text>
+                                        <Flex width="7%">
+                                            <Text>{index +1}.</Text>
                                         </Flex>
-                                        <Flex align="center" width="80%">
+                                        <Flex align="center" width="75%">
                                             {item.imageURL ? (
-                                                <Image src={item.imageURL} borderRadius="full" boxSize="28px" mr={2} />
+                                                <Image src={item.imageURL} borderRadius="full" boxSize="22px" mr={2} />
                                             ) : (
                                                 <Icon as={AiOutlineFund} fontSize={30} color="brand.100" mr={2} />
                                             )}
@@ -122,7 +122,7 @@ const TopTrackers: React.FC = () => {
                         {/*
                         <Box p="10px 20px">
                             <Button height="30px" width="100%">
-                                View All...
+                                Add your fund
                             </Button>
                         </Box>
                     */}

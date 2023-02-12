@@ -30,7 +30,7 @@ const MenuDrop:React.FC = () => {
 
 
                     {directoryState.clickedMenuItem.imageURL ? (
-                        <Image src={directoryState.clickedMenuItem.imageURL} borderRadius="full" boxSize="24" mr={2} />
+                        <Image src={directoryState.clickedMenuItem.imageURL} borderRadius="full" boxSize="10" mr={2} />
                     ) : (
                         <Icon fontSize={24} mr={{ base: 1, md: 2 }} as={directoryState.clickedMenuItem.icon} color={directoryState.clickedMenuItem.iconColor} />
                     )}

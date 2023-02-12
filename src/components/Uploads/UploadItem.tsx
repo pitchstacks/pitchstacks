@@ -127,10 +127,12 @@ const UploadItem:React.FC<UploadItemProps> = ({ upload, isUserAdmin, voteValue, 
                             - uploaded by {upload.creatorDisplayName}{" | "}{moment(new Date(upload.uploadTime?.seconds * 1000)).fromNow()}
                         </Text>
                     </Stack>
-                    <Text fontSize="12pt" fontWeight={600}>
-                        {upload.title}
-                    </Text>
-                    <Text fontSize="10pt">
+                    <Flex backgroundColor="gray.100" borderRadius="4px 4px 0px 0px">
+                        <Text fontSize="12pt" fontWeight={600} pl={2}>
+                            {upload.title}
+                        </Text>
+                    </Flex>                   
+                    <Text fontSize="10pt" pl={2}>
                         {upload.body}
                     </Text>
                     {upload.imageURL && (
@@ -157,7 +159,7 @@ const UploadItem:React.FC<UploadItemProps> = ({ upload, isUserAdmin, voteValue, 
 
                         <Icon 
                             as={voteValue == -1 ? IoArrowDownCircleSharp : IoArrowDownCircleOutline}
-                            color={voteValue == -1 ? "red" : "gray.400"}
+                            color={voteValue == -1 ? "gray" : "gray.400"}
                             fontSize={22}
                             ml={3}
                             mr={2}
