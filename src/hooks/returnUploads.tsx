@@ -134,7 +134,7 @@ const returnUploadList = () => {
             ...prev,
             selectedUpload: upload,
         }));
-        router.push(`/$/${upload.trackerId}/view/${upload.id}`);
+        router.push(`/$/${upload.trackerId}/view/${upload.body.id}`);
     };
 
 
@@ -198,6 +198,7 @@ const returnUploadList = () => {
                 ...prev,
                 uploadVotes: [],
             }));
+            return;
         }
     }, [user]);
 
