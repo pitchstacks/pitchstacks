@@ -14,16 +14,16 @@ import TopTrackers from "../components/Tracker/TopTrackers";
 import UploadItem from "../components/Uploads/UploadItem";
 import UploadLoader from "../components/Uploads/UploadLoader";
 import { auth, firestore } from "../firebase/configApp";
-import returnUploadList from "../hooks/ReturnUploads";
-import uploadedTrackerData from "../hooks/UploadedTrackerData";
+import ReturnUploadList from "../hooks/ReturnUploads";
+import UploadedTrackerData from "../hooks/UploadedTrackerData";
 
 const Home: NextPage = () => {
 
   const [user, loadingUser] = useAuthState(auth);
   const trackerStateValue = useRecoilValue(trackerCurrent);
   const [loading, setLoading] = useState(false);
-  const { uploadValue, setUploadValue, uploadClicked, uploadDeleted, voteAction } = returnUploadList();
-  const { trackerSValue } = uploadedTrackerData(); // returns all data -> home page
+  const { uploadValue, setUploadValue, uploadClicked, uploadDeleted, voteAction } = ReturnUploadList();
+  const { trackerSValue } = UploadedTrackerData(); // returns all data -> home page
 
   
   // Feed: logged in

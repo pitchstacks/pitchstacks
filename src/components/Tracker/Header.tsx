@@ -1,7 +1,7 @@
 import { Tracker } from '../../atoms/trackerAtom';
 import React from 'react';
 import { Box, Button, Flex, Icon, Image, Text } from '@chakra-ui/react';
-import uploadedTrackerData from '../../hooks/UploadedTrackerData';
+import UploadedTrackerData from '../../hooks/UploadedTrackerData';
 import { RiFundsLine } from "react-icons/ri";
 
 
@@ -11,7 +11,7 @@ type HeaderProps = {
 
 const Header:React.FC<HeaderProps> = ({ trackerData }) => {
     
-    const {trackerSValue, onMemInteraction, loading } = uploadedTrackerData();
+    const {trackerSValue, onMemInteraction, loading } = UploadedTrackerData();
     //const following = false; //default
     const following = !!trackerSValue.myTrackers.find(item => item.trackerId == trackerData.id);
 

@@ -1,6 +1,6 @@
 import { Tracker, trackerCurrent } from '@/src/atoms/trackerAtom';
 import { auth, firestore, storage } from '@/src/firebase/configApp';
-import selectIMG from '@/src/hooks/SelectIMG';
+import SelectIMG from '@/src/hooks/SelectIMG';
 import { Box, Button, Divider, Flex, Stack, Text, Image, Icon, Spinner } from '@chakra-ui/react';
 import { doc, updateDoc } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadString } from 'firebase/storage';
@@ -21,7 +21,7 @@ const Info:React.FC<InfoProps> = ({ trackerData }) => {
     //const router = useRouter();
     const [user] = useAuthState(auth);
     const selectProfilePicRef = useRef<HTMLInputElement>(null);
-    const { selectedFile, setSelectedFile, userUploadImage } = selectIMG();
+    const { selectedFile, setSelectedFile, userUploadImage } = SelectIMG();
     const [changingImage, setChangingImage] = useState(false);
     const trackerStateValue = useSetRecoilState(trackerCurrent);
 

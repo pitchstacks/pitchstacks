@@ -5,7 +5,7 @@ import { Stack } from '@chakra-ui/react';
 import { collection, getDocs, orderBy, query, where } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import returnUploadList from "../../hooks/ReturnUploads"
+import ReturnUploadList from "../../hooks/ReturnUploads"
 import UploadItem from './UploadItem';
 import UploadLoader from './UploadLoader';
 
@@ -17,7 +17,7 @@ const Uploads:React.FC<UploadsProps> = ({ trackerData }) => {
     
     const [user] = useAuthState(auth);
     const [loading, setLoading] = useState(false);
-    const { uploadValue, setUploadValue, voteAction, uploadClicked, uploadDeleted } = returnUploadList();
+    const { uploadValue, setUploadValue, voteAction, uploadClicked, uploadDeleted } = ReturnUploadList();
 
     const returnUploads = async () => {
         try {

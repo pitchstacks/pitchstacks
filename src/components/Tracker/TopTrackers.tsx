@@ -1,6 +1,6 @@
 import { Tracker } from '@/src/atoms/trackerAtom';
 import { firestore } from '@/src/firebase/configApp';
-import uploadedTrackerData from '@/src/hooks/UploadedTrackerData';
+import UploadedTrackerData from '@/src/hooks/UploadedTrackerData';
 import { Box, Button, Flex, Icon, Image, Skeleton, Stack, Text } from '@chakra-ui/react';
 import { collection, getDocs, limit, orderBy, query } from 'firebase/firestore';
 import Link from 'next/link';
@@ -14,7 +14,7 @@ const TopTrackers: React.FC = () => {
 
     const [trackers, setTrackers] = useState<Tracker[]>([]);
     const [loading, setLoading] = useState(false);
-    const { trackerSValue, onMemInteraction } = uploadedTrackerData();
+    const { trackerSValue, onMemInteraction } = UploadedTrackerData();
 
 
     const getTopTrackers = async () => {

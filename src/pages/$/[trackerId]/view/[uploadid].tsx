@@ -4,7 +4,7 @@ import Info from '@/src/components/Tracker/Info';
 import Comments from '@/src/components/Uploads/Comments/Comments';
 import UploadItem from '@/src/components/Uploads/UploadItem';
 import { auth, firestore } from '@/src/firebase/configApp';
-import returnUploadList from '@/src/hooks/ReturnUploads';
+import ReturnUploadList from '@/src/hooks/ReturnUploads';
 import { User } from 'firebase/auth';
 import { doc, getDoc } from 'firebase/firestore';
 import { useRouter } from 'next/router';
@@ -16,7 +16,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 const UploadPage:React.FC = () => {
 
     const [user] = useAuthState(auth);
-    const { uploadValue, setUploadValue, voteAction, uploadClicked, uploadDeleted } = returnUploadList();
+    const { uploadValue, setUploadValue, voteAction, uploadClicked, uploadDeleted } = ReturnUploadList();
     const router = useRouter();
 
 
