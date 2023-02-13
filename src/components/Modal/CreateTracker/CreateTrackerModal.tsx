@@ -1,5 +1,5 @@
 import { auth, firestore } from '@/src/firebase/configApp';
-import ClickDirectory from '@/src/hooks/ClickDirectory';
+import ClickDirectory from '../../../hooks/ClickDirectory';
 import { Text, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Box, Input, Stack, Checkbox, Flex, Icon } from '@chakra-ui/react';
 import { doc, getDoc, runTransaction, serverTimestamp, setDoc } from 'firebase/firestore';
 import { useRouter } from 'next/router';
