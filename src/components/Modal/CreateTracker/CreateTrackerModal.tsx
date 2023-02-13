@@ -1,5 +1,5 @@
 import { auth, firestore } from '@/src/firebase/configApp';
-import clickDirectory from '@/src/hooks/ClickDirectory';
+import ClickDirectory from '@/src/hooks/ClickDirectory';
 import { Text, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Box, Input, Stack, Checkbox, Flex, Icon } from '@chakra-ui/react';
 import { doc, getDoc, runTransaction, serverTimestamp, setDoc } from 'firebase/firestore';
 import { useRouter } from 'next/router';
@@ -24,7 +24,7 @@ const CreateTrackerModal:React.FC<CreateTrackerModalProps> = ({ open, closecreat
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
     const router = useRouter();
-    const { makeMenuOpen } = clickDirectory();
+    const { makeMenuOpen } = ClickDirectory();
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         // count we have left
