@@ -1,6 +1,6 @@
 import { authModalState } from '@/src/atoms/authModalAtom';
 import { auth } from '@/src/firebase/configApp';
-import clickDirectory from '@/src/hooks/ClickDirectory';
+import ClickDirectory from '@/src/hooks/ClickDirectory';
 import { Flex, Icon, Input, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import React from 'react';
@@ -17,7 +17,7 @@ const CreatePostBtn: React.FC = () => {
     const router = useRouter();
     const [user] = useAuthState(auth);
     const setLoginModal = useSetRecoilState(authModalState);
-    const { makeMenuOpen } = clickDirectory();
+    const { makeMenuOpen } = ClickDirectory();
 
 
     // links user to /upload page

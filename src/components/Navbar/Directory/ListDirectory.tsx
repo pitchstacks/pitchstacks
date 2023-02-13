@@ -1,4 +1,4 @@
-import clickDirectory from '@/src/hooks/ClickDirectory';
+import ClickDirectory from '@/src/hooks/ClickDirectory';
 import { Flex, Icon, Image, MenuItem } from '@chakra-ui/react';
 import React from 'react';
 import { IconType } from 'react-icons';
@@ -14,7 +14,7 @@ type ListDirectoryProps = {
 const ListDirectory:React.FC<ListDirectoryProps> = ({ textShown, link, icon, iconColor, imageURL }) => {
     
 
-    const { clickedMenuItem } = clickDirectory();
+    const { clickedMenuItem } = ClickDirectory();
 
     return (
         <MenuItem width="100%" fontSize="10pt"

@@ -1,6 +1,6 @@
 import { defaultItem } from '@/src/atoms/menuAtom';
 import { auth } from '@/src/firebase/configApp';
-import clickDirectory from '@/src/hooks/ClickDirectory';
+import ClickDirectory from '@/src/hooks/ClickDirectory';
 import { Flex, Image, Link } from '@chakra-ui/react';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -11,7 +11,7 @@ import SearchBar from './SearchBar';
 const Navbar:React.FC = () => {
 
     const [user, loading, error] = useAuthState(auth);
-    const { clickedMenuItem } = clickDirectory();
+    const { clickedMenuItem } = ClickDirectory();
     
     return (
         <Flex bg="white" height="50px" padding="0px 75px" 

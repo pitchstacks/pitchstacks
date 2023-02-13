@@ -1,4 +1,4 @@
-import clickDirectory from '@/src/hooks/ClickDirectory';
+import ClickDirectory from '@/src/hooks/ClickDirectory';
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import {
     Flex, Icon, Menu,
@@ -14,7 +14,7 @@ import Trackers from './Trackers';
 
 const MenuDrop:React.FC = () => {
 
-    const { directoryState, makeMenuOpen } = clickDirectory();
+    const { directoryState, makeMenuOpen } = ClickDirectory();
     
     return (
         <Menu isOpen={directoryState.open}>
