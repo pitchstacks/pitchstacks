@@ -5,7 +5,7 @@ import { Stack } from '@chakra-ui/react';
 import { collection, getDocs, orderBy, query, where } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import ReturnUploadList from "../../hooks/ReturnUploads"
+import ReturnUploadList from "../../hooks/ReturnUploadList"
 import UploadItem from './UploadItem';
 import UploadLoader from './UploadLoader';
 
