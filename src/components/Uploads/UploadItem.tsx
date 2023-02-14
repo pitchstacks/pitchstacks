@@ -8,8 +8,7 @@ import React, { useState } from 'react';
 
 //icons (change later)
 import { AiOutlineDelete } from "react-icons/ai";
-import { BiUserCircle, BiWorld } from 'react-icons/bi';
-import { BsChat, BsDot } from "react-icons/bs";
+import { BiWorld } from 'react-icons/bi';
 import { IoArrowDownCircleOutline, IoArrowDownCircleSharp, IoArrowUpCircleOutline, IoArrowUpCircleSharp } from "react-icons/io5";
 
 //pdf imports (react pdf viewer)
@@ -176,7 +175,7 @@ const UploadItem:React.FC<UploadItemProps> = ({ upload, isUserAdmin, voteValue, 
                         <Text mr={3} fontSize="9pt" fontWeight={400}></Text>
                         <Icon 
                             as={voteValue == 1 ? IoArrowUpCircleSharp : IoArrowUpCircleOutline}
-                            color={voteValue ==1 ? "brand.100" : "gray.400"}
+                            color={voteValue ==1 ? "brand.200" : "gray.400"}
                             fontSize={22}
                             mr={2}
                             cursor="pointer"

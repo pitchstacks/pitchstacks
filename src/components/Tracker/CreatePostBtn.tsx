@@ -1,13 +1,10 @@
 import { authModalState } from '@/src/atoms/authModalAtom';
 import { auth } from '@/src/firebase/configApp';
 import ClickDirectory from '@/src/hooks/ClickDirectory';
-import { Flex, Icon, Input, Text } from '@chakra-ui/react';
+import { Flex, Input } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { BsLink45Deg } from 'react-icons/bs';
-import { IoImageOutline } from 'react-icons/io5';
-import { RiFundsBoxLine } from 'react-icons/ri';
 import { useSetRecoilState } from 'recoil';
 
 
