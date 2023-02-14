@@ -19,7 +19,7 @@ type TrackerPageProps = {
 
 const TrackerPage: React.FC<TrackerPageProps> = ({ trackerData }) => {
     
-    const [user, loadingUser] = useAuthState(auth);
+    //const [user, loadingUser] = useAuthState(auth);
     const setTrackerView = useSetRecoilState(uploadState);
     
 
