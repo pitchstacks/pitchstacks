@@ -1,6 +1,5 @@
 import { Upload } from '@/src/atoms/uploadAtom';
 import MainContentLayout from '@/src/components/Layout/MainContentLayout';
-import Info from '@/src/components/Tracker/Info';
 import Comments from '@/src/components/Uploads/Comments/Comments';
 import UploadItem from '@/src/components/Uploads/UploadItem';
 import { auth, firestore } from '@/src/firebase/configApp';
@@ -51,19 +50,24 @@ const UploadPage:React.FC = () => {
     return (
         <MainContentLayout>
             <>
+                {/* Upload view */}
                 {uploadValue.selectedUpload && (
                 <UploadItem upload={uploadValue.selectedUpload} voteAction={voteAction} uploadDeleted={uploadDeleted} voteValue={uploadValue.uploadVotes.find(item => item.uploadId == uploadValue.selectedUpload?.id)?.voteNumber} 
                     isUserAdmin={user?.uid == uploadValue.selectedUpload?.creatorId}
                 />)}
+
+                {/* Displays comments */}{/*
                 <Comments 
                     user={user as User} 
                     selectedUpload={uploadValue.selectedUpload} 
                     trackerId={uploadValue.selectedUpload?.trackerId as string} 
-                />
+                />*/}
+
+
             </>
             <>
                 {/* side info */}
-                {/*<Info trackerData={} />*/}
+                
                 
             </>
         </MainContentLayout>
