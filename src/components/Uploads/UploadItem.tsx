@@ -7,7 +7,6 @@ import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 
 //icons (change later)
-import { AiOutlineDelete } from "react-icons/ai";
 import { BiWorld } from 'react-icons/bi';
 import { IoArrowDownCircleOutline, IoArrowDownCircleSharp, IoArrowUpCircleOutline, IoArrowUpCircleSharp } from "react-icons/io5";
 
@@ -212,8 +211,8 @@ const UploadItem:React.FC<UploadItemProps> = ({ upload, isUserAdmin, voteValue, 
                                 <Spinner size="sm" />
                             ): (
                                 <>
-                                <Icon as={AiOutlineDelete} mr={2} />
-                                <Text fontSize="9pt">Delete</Text>
+                                {/*<Icon as={AiOutlineDelete} mr={2} />*/}
+                                <Text fontSize="9pt" mr={2}>Delete your upload</Text>
                                 </>
                             )}
                         </Flex>

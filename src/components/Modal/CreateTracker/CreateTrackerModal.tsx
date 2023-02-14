@@ -5,9 +5,7 @@ import { doc, getDoc, runTransaction, serverTimestamp, setDoc } from 'firebase/f
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-// icons
-import { BsFillPersonFill } from "react-icons/bs";
-import { HiLockClosed } from "react-icons/hi";
+
 
 type CreateTrackerModalProps = {
     open: boolean;
@@ -154,8 +152,7 @@ const CreateTrackerModal:React.FC<CreateTrackerModalProps> = ({ open, closecreat
                                     isChecked={trackerType == "public"} 
                                     onChange={onTypeChange}>
                                         <Flex align="center">
-                                            <Icon as={BsFillPersonFill} mr={1} />
-                                            <Text fontSize="10pt" mr={1}>Open</Text>
+                                            <Text fontSize="10pt" mr={2}>Open</Text>
                                             <Text fontSize="8pt" color="gray.500" pt={1}>Any user can upload to or view</Text>
                                         </Flex>
                                 </Checkbox>
@@ -164,8 +161,7 @@ const CreateTrackerModal:React.FC<CreateTrackerModalProps> = ({ open, closecreat
                                     isChecked={trackerType == "limited"} 
                                     onChange={onTypeChange}>
                                         <Flex align="center">
-                                            <Icon as={HiLockClosed} mr={1} />
-                                            <Text fontSize="10pt" mr={1}>Limited</Text>
+                                            <Text fontSize="10pt" mr={2}>Limited</Text>
                                             <Text fontSize="8pt" color="gray.500" pt={1}>Any user can view but must be approved to upload</Text>
                                         </Flex>
                                 </Checkbox>
@@ -174,8 +170,7 @@ const CreateTrackerModal:React.FC<CreateTrackerModalProps> = ({ open, closecreat
                                     isChecked={trackerType == "private"} 
                                     onChange={onTypeChange}>
                                         <Flex align="center">
-                                            <Icon as={HiLockClosed} mr={1} />
-                                            <Text fontSize="10pt" mr={1}>Private</Text>
+                                            <Text fontSize="10pt" mr={2}>Private</Text>
                                             <Text fontSize="8pt" color="gray.500" pt={1}>Must be approved to upload to or view</Text>
                                         </Flex>
                                 </Checkbox>

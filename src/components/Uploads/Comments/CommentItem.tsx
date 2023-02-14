@@ -2,9 +2,7 @@ import { Box, Flex, Icon, Spinner, Stack, Text } from '@chakra-ui/react';
 import { Timestamp } from 'firebase/firestore';
 import moment from 'moment';
 import React from 'react';
-import { BiUserCircle } from "react-icons/bi";
-import { BsDot } from 'react-icons/bs';
-import { cursorTo } from 'readline';
+
 
 
 export type Comment = {
@@ -41,7 +39,7 @@ const CommentItem:React.FC<CommentItemProps> = ({ comment, userDeleteComment, is
                     </Text>
                     {userId == comment.createdBy && (
                         <>
-                        <Icon as={BsDot} />
+                        {" "}
                         <Text 
                             fontSize="8pt"
                             _hover={{ color: "blue.500", cursor: "pointer" }} 

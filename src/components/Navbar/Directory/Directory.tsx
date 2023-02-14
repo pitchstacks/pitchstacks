@@ -8,7 +8,6 @@ import {
     Image
 } from '@chakra-ui/react';
 import React from 'react';
-import { AiOutlineStock } from 'react-icons/ai';
 import Trackers from './Trackers';
 
 
