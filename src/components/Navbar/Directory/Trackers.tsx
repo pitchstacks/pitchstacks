@@ -1,7 +1,6 @@
 import { Box, Flex, Icon, MenuItem, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import CreateTrackerModal from '../../Modal/CreateTracker/CreateTrackerModal';
-import { GrAdd } from "react-icons/gr";
 import { RiFundsBoxLine } from "react-icons/ri"
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '@/src/firebase/configApp';
@@ -40,7 +39,7 @@ const Trackers:React.FC<TrackersProps> = () => {
                     onClick={() => setOpen(true)}
                     >
                     <Flex align="center" fontSize={15}>
-                        <Icon fontSize={15} mr={2} as={GrAdd} />
+                        {/*<Icon fontSize={15} mr={2} as={GrAdd} />*/}
                         Create New
                     </Flex>
                 </MenuItem>
