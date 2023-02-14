@@ -31,7 +31,7 @@ const Trackers:React.FC<TrackersProps> = () => {
                 </Text>
                 
                     {myTrackers.filter((snippet) => snippet.canEdit).map((snippet) => (
-                        <ListDirectory key={snippet.trackerId} icon={RiFundsBoxLine} textShown={`@${snippet.trackerId}`} link={`/$/${snippet.trackerId}`} imageURL={snippet.imageURL} iconColor="brand.100" />
+                        <ListDirectory icon={RiFundsBoxLine} key={snippet.trackerId} textShown={`@${snippet.trackerId}`} link={`/$/${snippet.trackerId}`} imageURL={snippet.imageURL} iconColor="brand.100" />
                     ))}
                 <MenuItem 
                     width="100%" 

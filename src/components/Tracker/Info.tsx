@@ -7,8 +7,7 @@ import { getDownloadURL, ref, uploadString } from 'firebase/storage';
 import Link from 'next/link';
 import React, { useRef, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { RiFundsLine } from 'react-icons/ri';
-import { useRecoilState, useSetRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 
 type InfoProps = {
     trackerData: Tracker;
@@ -112,15 +111,12 @@ const Info:React.FC<InfoProps> = ({ trackerData }) => {
                                         alt="Profile Pic"
                                     />
                                 ) : (
-                                    <Icon 
-                                        fontSize={40} 
-                                        position="relative"
-                                        right={-4}
-                                        border="1px solid gray"
-                                        backgroundColor="white"
-                                        borderRadius="50%"
-                                        as={RiFundsLine}
-                                    />
+                                    <Image src="/images/icon_white_background.png"
+                                    draggable="false"
+                                    borderRadius="full"
+                                    boxSize="40px"
+                                    alt="Profile Pic"
+                            />
                                 )}
                             </Flex>
                             {selectedFile && (

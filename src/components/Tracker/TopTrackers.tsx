@@ -5,7 +5,6 @@ import { Box, Button, Flex, Icon, Image, Skeleton, Stack, Text } from '@chakra-u
 import { collection, getDocs, limit, orderBy, query } from 'firebase/firestore';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-import { AiOutlineFund } from 'react-icons/ai';
 
 
 
@@ -105,7 +104,7 @@ const TopTrackers: React.FC = () => {
                                             {item.imageURL ? (
                                                 <Image src={item.imageURL} borderRadius="full" boxSize="22px" mr={2} />
                                             ) : (
-                                                <Icon as={AiOutlineFund} fontSize={30} color="brand.100" mr={2} />
+                                                <Image src="/images/icon_white_background.png" borderRadius="full" boxSize="22px" mr={2} />
                                             )}
                                             <span style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
                                                 {`@${item.id}`}

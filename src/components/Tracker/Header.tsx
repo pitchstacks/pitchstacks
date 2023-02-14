@@ -2,7 +2,6 @@ import { Tracker } from '../../atoms/trackerAtom';
 import React from 'react';
 import { Box, Button, Flex, Icon, Image, Text } from '@chakra-ui/react';
 import UploadedTrackerData from '../../hooks/UploadedTrackerData';
-import { RiFundsLine } from "react-icons/ri";
 
 
 type HeaderProps = {
@@ -33,14 +32,17 @@ const Header:React.FC<HeaderProps> = ({ trackerData }) => {
                             top={-3}
                         />
                     ) : (
-                    <Icon 
-                        fontSize={70} 
-                        position="relative" 
-                        top={-5}
-                        border="1px solid gray"
-                        backgroundColor="white"
-                        borderRadius="50%"
-                        as={RiFundsLine}
+                        <Image 
+                            src="/images/icon_white_background.png"
+                            //borderRadius="full"
+                            draggable="false"
+                            borderRadius={7}
+                            border="2px solid white"
+                            boxSize="66px"
+                            alt="Profile Image"
+                            position="relative"
+                            background="white"
+                            top={-3}
                         />
                     )}
 

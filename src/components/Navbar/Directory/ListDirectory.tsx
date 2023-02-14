@@ -11,7 +11,7 @@ type ListDirectoryProps = {
     imageURL?: string;
 };
 
-const ListDirectory:React.FC<ListDirectoryProps> = ({ textShown, link, icon, iconColor, imageURL }) => {
+const ListDirectory:React.FC<ListDirectoryProps> = ({ textShown, icon, link, iconColor, imageURL }) => {
     
 
     const { clickedMenuItem } = ClickDirectory();
@@ -19,12 +19,12 @@ const ListDirectory:React.FC<ListDirectoryProps> = ({ textShown, link, icon, ico
     return (
         <MenuItem width="100%" fontSize="10pt"
             _hover={{ bg: "gray.100" }}
-            onClick={() => clickedMenuItem({ textShown, link, icon, iconColor, imageURL })}> {/* link -> tracker page */}
+            onClick={() => clickedMenuItem({ textShown, icon, link, iconColor, imageURL })}> {/* link -> tracker page */}
                 <Flex align="center">
                     {imageURL ? (
                         <Image src={imageURL} borderRadius="full" boxSize="16px" mr={2} />
                     ) : (
-                        <Icon as={icon} fontSize={15} mr={2} color={iconColor} />
+                        <Image src="/images/icon_white_background.png" borderRadius="full" boxSize="16px" mr={2} />
                     )}{textShown}
                     
                 </Flex>
