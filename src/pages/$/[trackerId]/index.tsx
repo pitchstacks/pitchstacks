@@ -1,7 +1,6 @@
 import { Tracker } from '@/src/atoms/trackerAtom';
 import { uploadState } from '@/src/atoms/uploadAtom';
-import MainContentLayout from '@/src/components/Layout/MainContentLayout';
-import CreatePostBtn from '@/src/components/Tracker/CreatePostBtn';
+import MainContentLayout from '@/src/components/Layout/MainContentLayout'; 
 import Header from '@/src/components/Tracker/Header';
 import Info from '@/src/components/Tracker/Info';
 import PageNotFound from '@/src/components/Tracker/PageNotFound';
