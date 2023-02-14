@@ -134,7 +134,7 @@ const ReturnUploadList = () => {
             ...prev,
             selectedUpload: upload,
         }));
-        router.push(`/$/${upload.trackerId}/view/${upload.body.id}`);
+        //router.push(`/$/${upload.trackerId}/view/${upload.body.id}`);
     };
 
 
