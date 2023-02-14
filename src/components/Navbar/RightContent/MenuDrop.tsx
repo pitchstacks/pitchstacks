@@ -18,15 +18,10 @@ import {
 import { signOut, User } from 'firebase/auth';
 import React from 'react';
 // replace these icons later
-import { FaRedditSquare } from "react-icons/fa";
 import { VscAccount } from "react-icons/vsc";
-import { IoSparkles } from "react-icons/io5";
-import { CgProfile } from "react-icons/cg";
-import { MdOutlineLogin } from "react-icons/md";
 import { auth } from '@/src/firebase/configApp';
 import { useResetRecoilState, useSetRecoilState } from 'recoil';
 import { authModalState } from '@/src/atoms/authModalAtom';
-import { trackerCurrent } from '@/src/atoms/trackerAtom';
 
 
 
@@ -84,7 +79,7 @@ const MenuDrop:React.FC<MenuDropProps> = ({ user }) => {
                     <MenuItem fontSize="10pt" fontWeight={700}
                     _hover={{ bg: "blue.300", color: "white" }}>
                     <Flex align="center">
-                        <Icon fontSize={15} mr={2} as={CgProfile} />
+                        {/*<Icon fontSize={15} mr={2} as={CgProfile} />*/}
                         Profile (coming soon)
                     </Flex>
                 </MenuItem>{/*
@@ -108,7 +103,7 @@ const MenuDrop:React.FC<MenuDropProps> = ({ user }) => {
                     onClick={logout}
                     >
                     <Flex align="center">
-                        <Icon fontSize={15} mr={2} as={MdOutlineLogin} />
+                        {/*<Icon fontSize={15} mr={2} as={MdOutlineLogin} />*/}
                         Logout
                     </Flex>
                 </MenuItem>
@@ -120,7 +115,7 @@ const MenuDrop:React.FC<MenuDropProps> = ({ user }) => {
                     onClick={() => setAuthModalState({ open: true, view: "login" })}
                     >
                     <Flex align="center">
-                        <Icon fontSize={15} mr={2} as={MdOutlineLogin} />
+                        {/*<Icon fontSize={15} mr={2} as={MdOutlineLogin} />*/}
                         Sign in
                     </Flex>
                     </MenuItem>
