@@ -22,7 +22,7 @@ type UploadFormProps = {
     user: User;
     trackerImageURL?: string;
     trackerPDFURL?: string;
-    trackerId: string;
+    //trackerId: string;
 };
 
 const uploadTabInfo: TabItem[] = [
