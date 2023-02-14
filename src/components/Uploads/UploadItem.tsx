@@ -195,14 +195,16 @@ const UploadItem:React.FC<UploadItemProps> = ({ upload, isUserAdmin, voteValue, 
                         />
                         {/*<Text fontSize="9pt">{upload.totalVotes}</Text>*/}
 
-                        
+                        {/* 
                         <Icon as={BsChat} ml={5} mr={2} />
                         <Text fontSize="9pt">{upload.totalComments} comments</Text>
-                        
+                        */}
                     </Flex>
                     {/* delete func */}
                     {isUserAdmin && 
-                        <Flex align="center" p="8px 10px" 
+                        <Flex align="center" p="8px 10px"
+                            ml={5} 
+                            mr={2}
                             _hover={{ bg: "gray.100" }}
                             onClick={userClickedDelete}
                             cursor="pointer"
