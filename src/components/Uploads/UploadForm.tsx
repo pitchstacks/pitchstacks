@@ -98,7 +98,7 @@ const UploadForm: React.FC<UploadFormProps> = ({ user, trackerImageURL, trackerP
         */}
 
         const uploadDocRef = await addDoc(collection(firestore, "uploads"), {
-            id: uploadDocRef.id, // big change
+            //id: uploadDocRef.id, // big change
             trackerId: trackerId as string,
             trackerImageURL: trackerImageURL || "",
             trackerPDFURL: trackerPDFURL || "",
