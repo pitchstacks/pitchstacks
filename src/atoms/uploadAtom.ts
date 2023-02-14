@@ -2,7 +2,7 @@ import { Timestamp } from "@google-cloud/firestore";
 import { atom } from "recoil";
 
 export type Upload = {
-    //id: string;
+    id: string;
     trackerId: string;
     creatorId: string;
     creatorDisplayName: string;
@@ -19,8 +19,6 @@ export type Upload = {
     uploadTime: Timestamp; 
 };
 
-// add bio
-// add school
 
 
 export type UploadVote = {

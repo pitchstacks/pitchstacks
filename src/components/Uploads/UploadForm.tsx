@@ -22,6 +22,7 @@ type UploadFormProps = {
     user: User;
     trackerImageURL?: string;
     trackerPDFURL?: string;
+    trackerId: string;
 };
 
 const uploadTabInfo: TabItem[] = [
@@ -75,9 +76,29 @@ const UploadForm: React.FC<UploadFormProps> = ({ user, trackerImageURL, trackerP
         try {
 
 
-        //new upload obj
-        const newUpload: Upload = {
-            //id: user.uid, // big change
+            
+            {/*
+            const newUpload: Upload = {
+                //id: uploadDocRef.id, // big change
+                trackerId: trackerId as string,
+                trackerImageURL: trackerImageURL || "",
+                trackerPDFURL: trackerPDFURL || "",
+                creatorId: user.uid,
+                creatorDisplayName: user.email!.split('@')[0],
+                title: textInputs.title,
+                body: textInputs.body,
+                ticker: textInputs.ticker,
+                type: textInputs.type,
+                totalComments: 0,
+                totalVotes: 0,
+                uploadTime: serverTimestamp() as Timestamp,
+            };
+
+            const uploadDocRef = await addDoc(collection(firestore, "uploads"), newUpload);
+        */}
+
+        const uploadDocRef = await addDoc(collection(firestore, "uploads"), {
+            id: uploadDocRef.id, // big change
             trackerId: trackerId as string,
             trackerImageURL: trackerImageURL || "",
             trackerPDFURL: trackerPDFURL || "",
@@ -90,12 +111,15 @@ const UploadForm: React.FC<UploadFormProps> = ({ user, trackerImageURL, trackerP
             totalComments: 0,
             totalVotes: 0,
             uploadTime: serverTimestamp() as Timestamp,
-        };
+        });
+
+
+
+            console.log("HERE IS NEW POST ID", uploadDocRef.id);
 
 
 
 
-            const uploadDocRef = await addDoc(collection(firestore, "uploads"), newUpload);
 
             if (selectedFile) {
                 const imgRef = ref(storage, `/uploads/${uploadDocRef.id}/image`); //location

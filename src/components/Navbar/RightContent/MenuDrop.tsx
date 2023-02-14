@@ -64,8 +64,8 @@ const MenuDrop:React.FC<MenuDropProps> = ({ user }) => {
                                     {user?.displayName || user?.email?.split("@")[0]}
                                 </Text>
                                 <Flex alignItems="center">
-                                    {/*<Text color="gray.400">PitchStacks BETA v.1.0.0</Text>*/}
-                                    <Text color="gray.400">[university name...]</Text>
+                                    <Text color="gray.400">PitchStacks BETA v.1.0.0</Text>
+                                    {/*<Text color="gray.400">[university name...]</Text>*/}
                                 </Flex>
                             </Flex>
                             </>
