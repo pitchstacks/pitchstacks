@@ -1,15 +1,16 @@
 import { Tracker } from '@/src/atoms/trackerAtom';
 import { uploadState } from '@/src/atoms/uploadAtom';
 import MainContentLayout from '@/src/components/Layout/MainContentLayout'; 
-import Header from '@/src/components/Tracker/Header';
+//import Header from '@/src/components/Tracker/Header';
+const Header = dynamic(() => import('@/src/components/Tracker/Header'));
 import Info from '@/src/components/Tracker/Info';
 import PageNotFound from '@/src/components/Tracker/PageNotFound';
 import Uploads from '@/src/components/Uploads/Uploads';
-import { auth, firestore } from '@/src/firebase/configApp';
+import { firestore } from '@/src/firebase/configApp';
 import { doc, getDoc } from 'firebase/firestore';
 import { GetServerSidePropsContext } from 'next';
+import dynamic from 'next/dynamic';
 import React, { useEffect } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { useSetRecoilState } from 'recoil';
 import safeJsonStringify from 'safe-json-stringify';
 
@@ -60,6 +61,9 @@ const TrackerPage: React.FC<TrackerPageProps> = ({ trackerData }) => {
 };
 
 
+// new ???? (video)
+
+
 // MOST IMPORTANT FUNC (getServerSideProps)
 // server side rendering page content data
 export async function getServerSideProps(context: GetServerSidePropsContext) {
@@ -76,7 +80,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
                     : "",
             },
         };
-
 
     } catch (error) {
         // add error page [here]

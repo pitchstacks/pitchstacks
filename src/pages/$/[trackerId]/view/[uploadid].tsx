@@ -52,7 +52,11 @@ const UploadPage:React.FC = () => {
             <>
                 {/* Upload view */}
                 {uploadValue.selectedUpload && (
-                <UploadItem upload={uploadValue.selectedUpload} voteAction={voteAction} uploadDeleted={uploadDeleted} voteValue={uploadValue.uploadVotes.find(item => item.uploadId == uploadValue.selectedUpload?.id)?.voteNumber} 
+                <UploadItem 
+                    upload={uploadValue.selectedUpload} 
+                    voteAction={voteAction} 
+                    uploadDeleted={uploadDeleted} 
+                    voteValue={uploadValue.uploadVotes.find(item => item.uploadId == uploadValue.selectedUpload?.id)?.voteNumber} 
                     isUserAdmin={user?.uid == uploadValue.selectedUpload?.creatorId}
                 />)}
 
