@@ -20,10 +20,10 @@ const TabNav:React.FC<TabNavProps> = ({ item, selected, setSelectedTab }) => {
             borderRightColor="gray.200"
             onClick={() => setSelectedTab(item.title)}
             >
-            <Flex align="center" height="25px" mr={3}>
+            {/*<Flex align="center" height="25px" mr={3}>
                 <Icon as={item.icon} />
-            </Flex>
-            <Text fontSize="12pt">{item.title}</Text>
+            </Flex>*/}
+            <Text fontSize="12pt" mr={3}>{item.title}</Text>
         </Flex>
     );
 };

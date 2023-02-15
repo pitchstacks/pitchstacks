@@ -1,21 +1,14 @@
-import { Upload } from '@/src/atoms/uploadAtom';
 import { firestore, storage } from '@/src/firebase/configApp';
-import SelectIMG from '@/src/hooks/SelectIMG';
 import { Alert, AlertDescription, AlertIcon, AlertTitle, Flex, Icon, TableContainer } from '@chakra-ui/react';
-import { async } from '@firebase/util';
-import { Readex_Pro } from '@next/font/google';
 import { User } from 'firebase/auth';
 import { addDoc, collection, serverTimestamp, Timestamp, updateDoc } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadString } from 'firebase/storage';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
-import { BsCardText } from 'react-icons/bs';
-import { IoDocumentText } from 'react-icons/io5';
 import TabNav from './TabNav';
 import ImageUpload from './UploadForm/ImageUpload';
 import PdfUpload from './UploadForm/PdfUpload';
 import TextInput from './UploadForm/TextInput';
-import UploadItem from './UploadItem';
 
 type UploadFormProps = {
     //user?: User | null;
@@ -28,21 +21,21 @@ type UploadFormProps = {
 const uploadTabInfo: TabItem[] = [
     {
         title: 'Info',
-        icon: BsCardText,
+        //icon: BsCardText,
     },
     {
-        title: "Add PDF",
-        icon: IoDocumentText,
+        title: "📄 Add PDF",
+        //icon: IoDocumentText,
     },
     {
-        title: "Add File",
-        icon: IoDocumentText,
+        title: "📸 Add File",
+        //icon: IoDocumentText,
     }
 ];
 
 export type TabItem = {
     title: string;
-    icon: typeof Icon.arguments;
+    //icon: typeof Icon.arguments;
 }
 
 const UploadForm: React.FC<UploadFormProps> = ({ user, trackerImageURL, trackerPDFURL }) => {
@@ -245,7 +238,7 @@ const UploadForm: React.FC<UploadFormProps> = ({ user, trackerImageURL, trackerP
                 )}
 
                 {/* PDF upload */}
-                {selectedTabItem == "Add PDF" && (
+                {selectedTabItem == "📄 Add PDF" && (
                     <PdfUpload 
                         selectPDF={selectedPDF} 
                         userUploadPDF={userUploadPDF} 
@@ -255,7 +248,7 @@ const UploadForm: React.FC<UploadFormProps> = ({ user, trackerImageURL, trackerP
                 )}
 
                 {/* Image upload */}
-                {selectedTabItem == "Add File" && (
+                {selectedTabItem == "📸 Add File" && (
                     <ImageUpload 
                         selectImage={selectedFile} 
                         userUploadImage={userUploadImage} 
