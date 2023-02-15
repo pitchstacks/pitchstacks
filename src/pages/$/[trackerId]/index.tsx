@@ -8,7 +8,6 @@ import Uploads from '@/src/components/Uploads/Uploads';
 import { firestore } from '@/src/firebase/configApp';
 import { doc, getDoc } from 'firebase/firestore';
 import { GetServerSidePropsContext } from 'next';
-import dynamic from 'next/dynamic';
 import React, { useEffect } from 'react';
 import { useSetRecoilState } from 'recoil';
 import safeJsonStringify from 'safe-json-stringify';

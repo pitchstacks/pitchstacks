@@ -5,6 +5,7 @@
       "codebase": "default",
       "ignore": [
         "node_modules",
+        "firestore",
         ".git",
         "firebase-debug.log",
         "firebase-debug.*.log"
