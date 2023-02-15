@@ -1,8 +1,7 @@
 import { Tracker } from '@/src/atoms/trackerAtom';
 import { uploadState } from '@/src/atoms/uploadAtom';
 import MainContentLayout from '@/src/components/Layout/MainContentLayout'; 
-//import Header from '@/src/components/Tracker/Header';
-const Header = dynamic(() => import('@/src/components/Tracker/Header'));
+import Header from '@/src/components/Tracker/Header';
 import Info from '@/src/components/Tracker/Info';
 import PageNotFound from '@/src/components/Tracker/PageNotFound';
 import Uploads from '@/src/components/Uploads/Uploads';
@@ -23,7 +22,6 @@ const TrackerPage: React.FC<TrackerPageProps> = ({ trackerData }) => {
     //const [user, loadingUser] = useAuthState(auth);
     const setTrackerView = useSetRecoilState(uploadState);
     
-
     //after data renders
     useEffect(() => {
         setTrackerView((prev) => ({
@@ -33,14 +31,11 @@ const TrackerPage: React.FC<TrackerPageProps> = ({ trackerData }) => {
     }, [trackerData]);
 
 
-
     //tracker page url does not exist:
     if (!trackerData) {
         return <PageNotFound />;
     }
 
-
-    
 
     //tracker page url exists:
     return (
@@ -86,7 +81,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
         console.log('error:', error);
     };
 };
-
 
 
 export default TrackerPage;
