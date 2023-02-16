@@ -4,23 +4,16 @@ import {
     MenuButton,
     MenuList,
     MenuItem,
-    MenuItemOption,
-    MenuGroup,
-    MenuOptionGroup,
     MenuDivider,
-    Button,
     Flex,
     Icon,
     Text,
-    Avatar,
-    AvatarBadge
   } from '@chakra-ui/react'
 import { signOut, User } from 'firebase/auth';
 import React from 'react';
-// replace these icons later
 import { VscAccount } from "react-icons/vsc";
 import { auth } from '@/src/firebase/configApp';
-import { useResetRecoilState, useSetRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import { authModalState } from '@/src/atoms/authModalAtom';
 
 
@@ -42,6 +35,7 @@ const MenuDrop:React.FC<MenuDropProps> = ({ user }) => {
                 <Flex align="center">
                 {user ? (
                             <>
+                            
                             <Icon 
                                 fontSize={24} 
                                 mr={1} 
@@ -53,6 +47,7 @@ const MenuDrop:React.FC<MenuDropProps> = ({ user }) => {
                                 direction="column"
                                 fontSize="8pt"
                                 alignItems="flex-start"
+                                ml={1}
                                 mr={8}
                                 >
                                 <Text fontWeight={700}>
@@ -101,7 +96,7 @@ const MenuDrop:React.FC<MenuDropProps> = ({ user }) => {
                 <MenuItem fontSize="10pt" fontWeight={700}
                     _hover={{ bg: "blue.300", color: "white" }}
                     onClick={logout}
-                    >
+                >
                     <Flex align="center">
                         {/*<Icon fontSize={15} mr={2} as={MdOutlineLogin} />*/}
                         Logout
@@ -111,8 +106,8 @@ const MenuDrop:React.FC<MenuDropProps> = ({ user }) => {
                 ) : (
                     <>
                     <MenuItem fontSize="10pt" fontWeight={700}
-                    _hover={{ bg: "blue.300", color: "white" }}
-                    onClick={() => setAuthModalState({ open: true, view: "login" })}
+                        _hover={{ bg: "blue.300", color: "white" }}
+                        onClick={() => setAuthModalState({ open: true, view: "login" })}
                     >
                     <Flex align="center">
                         {/*<Icon fontSize={15} mr={2} as={MdOutlineLogin} />*/}

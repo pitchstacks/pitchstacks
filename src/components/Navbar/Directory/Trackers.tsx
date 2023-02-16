@@ -1,7 +1,7 @@
 import { Box, Flex, Icon, MenuItem, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import CreateTrackerModal from '../../Modal/CreateTracker/CreateTrackerModal';
-import { RiFundsBoxLine } from "react-icons/ri"
+//import { RiFundsBoxLine } from "react-icons/ri"
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '@/src/firebase/configApp';
 import { useRecoilValue } from 'recoil';
@@ -9,9 +9,7 @@ import { trackerCurrent } from '@/src/atoms/trackerAtom';
 import ListDirectory from './ListDirectory';
 
 
-type TrackersProps = {
-    
-};
+type TrackersProps = {};
 
 const Trackers:React.FC<TrackersProps> = () => {
     
@@ -33,11 +31,11 @@ const Trackers:React.FC<TrackersProps> = () => {
                     {myTrackers.filter((snippet) => snippet.canEdit).map((snippet) => (
                         <ListDirectory
                             key={snippet.trackerId} 
-                            icon={RiFundsBoxLine}
+                            //icon={RiFundsBoxLine}
                             textShown={`@${snippet.trackerId}`} 
                             link={`/$/${snippet.trackerId}`} 
                             imageURL={snippet.imageURL} 
-                            iconColor="brand.100" 
+                            //iconColor="brand.100" 
                         />
                     ))}
                 <MenuItem 
@@ -45,9 +43,9 @@ const Trackers:React.FC<TrackersProps> = () => {
                     _hover={{ bg: "gray.100" }}
                     onClick={() => setOpen(true)}
                     >
-                    <Flex align="center" fontSize={15}>
+                    <Flex align="center" fontSize={15} fontWeight="bold" mt={2} mb={2}>
                         {/*<Icon fontSize={15} mr={2} as={GrAdd} />*/}
-                        Create New
+                        ➕ Create New
                     </Flex>
                 </MenuItem>
             </Box>
@@ -60,11 +58,11 @@ const Trackers:React.FC<TrackersProps> = () => {
                     {myTrackers.map((snippet) => (
                         <ListDirectory 
                             key={snippet.trackerId} 
-                            icon={RiFundsBoxLine} 
+                            //icon={RiFundsBoxLine} 
                             textShown={`@${snippet.trackerId}`} 
                             link={`/$/${snippet.trackerId}`} 
                             imageURL={snippet.imageURL} 
-                            iconColor="blue.300" 
+                            //iconColor="blue.300" 
                         />
                     ))}
                 

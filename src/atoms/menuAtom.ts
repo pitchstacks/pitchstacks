@@ -1,14 +1,14 @@
-import { IconType } from "react-icons";
-import { CgFeed } from "react-icons/cg";
+//import { IconType } from "react-icons";
+//import { CgFeed } from "react-icons/cg";
 import { atom } from "recoil";
 
 
 export type MenuItem = {
-    icon: IconType;
+    //icon: IconType;
     textShown: string;
     link: string;
     imageURL?: string;
-    iconColor: string;
+    //iconColor: string;
 };
 
 
@@ -20,8 +20,8 @@ interface MenuState {
 export const defaultItem: MenuItem = {
     textShown: "Your Feed",
     link: "/",
-    icon: CgFeed,
-    iconColor: "black",
+    //icon: CgFeed,
+    //iconColor: "black",
 };
 
 export const defaultMenuState: MenuState = {

@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
-import { AiOutlineStock } from 'react-icons/ai';
+//import { AiOutlineStock } from 'react-icons/ai';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { MenuItem, menuState } from '../atoms/menuAtom';
 import { trackerCurrent } from '../atoms/trackerAtom';
@@ -47,7 +47,7 @@ const ClickDirectory = () => {
                     textShown: `@${currentTracker.id}`, 
                     link:  `/$/${currentTracker.id}`,
                     imageURL: currentTracker.imageURL,
-                    icon: AiOutlineStock,
+                    //icon: AiOutlineStock,
                     iconColor: "blue.500",
                 },
             }))
