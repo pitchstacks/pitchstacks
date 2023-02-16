@@ -21,7 +21,7 @@ const PdfUpload:React.FC<PdfUploadProps> = ({
             {selectPDF ? (
                 <>
                
-                    <Text>PDF file selected</Text>
+                    <Text>Your .pdf file has been selected</Text>
 
                     
 
@@ -51,7 +51,7 @@ const PdfUpload:React.FC<PdfUploadProps> = ({
                     height="25px"
                     onClick={() => selectImageFile.current?.click()}
                 >
-                    Select PDF File
+                    Select .pdf File
                 </Button>
                 <input 
                     ref={selectImageFile} 
@@ -62,7 +62,7 @@ const PdfUpload:React.FC<PdfUploadProps> = ({
                 />
                 
                 {/* display selected file */}
-                <img src={selectPDF} />
+                <Image src={selectPDF} />
 
             </Flex>
             )}

@@ -63,6 +63,7 @@ const TrackerPage: React.FC<TrackerPageProps> = ({ trackerData }) => {
 export async function getServerSideProps(context: GetServerSidePropsContext) {
     // get page data --> to client
     try {
+        
         const trackerDocR = doc(firestore, "trackers", context.query.trackerId as string);
         const trackerDoc = await getDoc(trackerDocR);
         return {

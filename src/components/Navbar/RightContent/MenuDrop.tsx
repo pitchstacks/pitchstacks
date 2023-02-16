@@ -72,7 +72,8 @@ const MenuDrop:React.FC<MenuDropProps> = ({ user }) => {
                 {user ? (
                     <>
                     <MenuItem fontSize="10pt" fontWeight={700}
-                    _hover={{ bg: "blue.300", color: "white" }}>
+                        _hover={{ bg: "blue.300", color: "white" }}
+                    >
                     <Flex align="center">
                         {/*<Icon fontSize={15} mr={2} as={CgProfile} />*/}
                         Profile (coming soon)
