@@ -31,7 +31,14 @@ const Trackers:React.FC<TrackersProps> = () => {
                 </Text>
                 
                     {myTrackers.filter((snippet) => snippet.canEdit).map((snippet) => (
-                        <ListDirectory icon={RiFundsBoxLine} key={snippet.trackerId} textShown={`@${snippet.trackerId}`} link={`/$/${snippet.trackerId}`} imageURL={snippet.imageURL} iconColor="brand.100" />
+                        <ListDirectory
+                            key={snippet.trackerId} 
+                            icon={RiFundsBoxLine}
+                            textShown={`@${snippet.trackerId}`} 
+                            link={`/$/${snippet.trackerId}`} 
+                            imageURL={snippet.imageURL} 
+                            iconColor="brand.100" 
+                        />
                     ))}
                 <MenuItem 
                     width="100%" 
@@ -51,7 +58,14 @@ const Trackers:React.FC<TrackersProps> = () => {
                 </Text>
                 
                     {myTrackers.map((snippet) => (
-                        <ListDirectory key={snippet.trackerId} icon={RiFundsBoxLine} textShown={`@${snippet.trackerId}`} link={`/$/${snippet.trackerId}`} imageURL={snippet.imageURL} iconColor="blue.300" />
+                        <ListDirectory 
+                            key={snippet.trackerId} 
+                            icon={RiFundsBoxLine} 
+                            textShown={`@${snippet.trackerId}`} 
+                            link={`/$/${snippet.trackerId}`} 
+                            imageURL={snippet.imageURL} 
+                            iconColor="blue.300" 
+                        />
                     ))}
                 
             </Box>
