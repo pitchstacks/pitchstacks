@@ -21,7 +21,7 @@ const ImageUpload:React.FC<ImageUploadProps> = ({
             {selectImage ? (
                 <>
                     {/* Image preview */}
-                    <Image src={selectImage} maxWidth="400px" maxHeight="400px" />
+                    <Image alt="selected_photo" src={selectImage} maxWidth="400px" maxHeight="400px" />
                     
 
                     <Stack direction="row" mt={10} mb={10}>
@@ -61,7 +61,7 @@ const ImageUpload:React.FC<ImageUploadProps> = ({
                 />
                 
                 {/* display selected file */}
-                <img src={selectImage} />
+                <Image src={selectImage} />
 
             </Flex>
             )}
