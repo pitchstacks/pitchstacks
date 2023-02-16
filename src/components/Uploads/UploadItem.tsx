@@ -1,6 +1,6 @@
 import { Upload } from '@/src/atoms/uploadAtom';
 import { Text, Flex, Icon, Stack, Image, Skeleton, Spinner, Alert, AlertDescription, AlertIcon, AlertTitle, Button } from '@chakra-ui/react';
-import { async } from '@firebase/util';
+//import { async } from '@firebase/util';
 import moment from 'moment';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -8,7 +8,7 @@ import React, { useState } from 'react';
 
 //icons (change later)
 import { BiWorld } from 'react-icons/bi';
-import { IoArrowDownCircleOutline, IoArrowDownCircleSharp, IoArrowUpCircleOutline, IoArrowUpCircleSharp } from "react-icons/io5";
+//import { IoArrowDownCircleOutline, IoArrowDownCircleSharp, IoArrowUpCircleOutline, IoArrowUpCircleSharp } from "react-icons/io5";
 
 //pdf imports (react pdf viewer)
 import { Viewer } from '@react-pdf-viewer/core';
@@ -170,8 +170,12 @@ const UploadItem:React.FC<UploadItemProps> = ({ upload, isUserAdmin, voteValue, 
 
                 </Stack>
                 <Flex ml={1} mb={1} color="gray.500" fontWeight={300}>
+                    
+                    {/* voting func */}
                     <Flex align="center" p="8px 10px">
-                        <Text mr={3} fontSize="9pt" fontWeight={400}></Text>
+                        {/*<Text mr={3} fontSize="9pt" fontWeight={400}></Text>*/}
+                        
+                        {/*
                         <Icon 
                             as={voteValue == 1 ? IoArrowUpCircleSharp : IoArrowUpCircleOutline}
                             color={voteValue ==1 ? "brand.200" : "gray.400"}
@@ -181,7 +185,6 @@ const UploadItem:React.FC<UploadItemProps> = ({ upload, isUserAdmin, voteValue, 
                             onClick={(event) => voteAction(event, upload, 1, upload.trackerId)}
                         />
                         <Text fontSize="9pt">{upload.totalVotes}</Text>
-
                         <Icon 
                             as={voteValue == -1 ? IoArrowDownCircleSharp : IoArrowDownCircleOutline}
                             color={voteValue == -1 ? "gray" : "gray.400"}
@@ -191,18 +194,28 @@ const UploadItem:React.FC<UploadItemProps> = ({ upload, isUserAdmin, voteValue, 
                             cursor="pointer"
                             onClick={(event) => voteAction(event, upload, -1, upload.trackerId)}
                         />
-                        {/*<Text fontSize="9pt">{upload.totalVotes}</Text>*/}
+                        */}
 
+
+                        {/* comment label */}
                         {/* 
                         <Icon as={BsChat} ml={5} mr={2} />
                         <Text fontSize="9pt">{upload.totalComments} comments</Text>
                         */}
+
+
                     </Flex>
+
+
+
                     {/* delete func */}
                     {isUserAdmin && 
-                        <Flex align="center" p="8px 10px"
-                            ml={5} 
-                            mr={2}
+                        <Flex 
+                            align="center" 
+                            p="8px 10px"
+                            //ml={5} 
+                            //mr={2}
+                            mt={4}
                             _hover={{ bg: "gray.100" }}
                             onClick={userClickedDelete}
                             cursor="pointer"
@@ -212,7 +225,9 @@ const UploadItem:React.FC<UploadItemProps> = ({ upload, isUserAdmin, voteValue, 
                             ): (
                                 <>
                                 {/*<Icon as={AiOutlineDelete} mr={2} />*/}
-                                <Text fontSize="9pt" mr={2}>Delete your upload</Text>
+                                <Text fontSize="9pt">
+                                    Delete your upload
+                                </Text>
                                 </>
                             )}
                         </Flex>
@@ -221,6 +236,8 @@ const UploadItem:React.FC<UploadItemProps> = ({ upload, isUserAdmin, voteValue, 
 
 
                 </Flex>
+
+                    {/* error message */}
                     {error && (
                     <Alert status='error' mt={5} width="100%">
                     <AlertIcon />
